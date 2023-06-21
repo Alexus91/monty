@@ -49,6 +49,6 @@ void free_stack(stack_t **stack);
 int is_integer(const char *str);
 void init_stack(stack_t **stack);
 void initialize_stack(stack_t **stack);
-
+void pint(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
 

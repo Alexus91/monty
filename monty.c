@@ -62,6 +62,11 @@ void process_bytecode(FILE *bytecodeFile, stack_t **stack)
 		{
 			pall(stack);
 		}
+		else if (strcmp(opcode, "pint") == 0)
+		{
+			pint(stack, line_number);
+
+		}
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
