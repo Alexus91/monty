@@ -41,6 +41,7 @@ typedef struct instruction_s
 extern stack_t *stack;
 
 /* Function prototypes */
+void pop(stack_t **stack, unsigned int line_number);
 void process_bytecode(FILE *bytecodeFile, stack_t **stack);
 void push(stack_t **stack, int value);
 void pall(stack_t **stack);
