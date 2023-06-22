@@ -45,12 +45,15 @@ void pop(stack_t **stack, unsigned int line_number);
 void process_bytecode(FILE *bytecodeFile, stack_t **stack);
 void push(stack_t **stack, int value);
 void pall(stack_t **stack);
-void add(stack_t **stack);
 void free_stack(stack_t **stack);
 int is_integer(const char *str);
 void init_stack(stack_t **stack);
 void initialize_stack(stack_t **stack);
 void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+int process_push(FILE *bytecodeFile, stack_t **stack,
+		int *argument, unsigned int line_number);
+
 #endif /* MONTY_H */
 
