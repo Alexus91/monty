@@ -55,6 +55,8 @@ void add(stack_t **stack, unsigned int line_number);
 int process_push(FILE *bytecodeFile, stack_t **stack,
 		int *argument, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+
 
 #endif /* MONTY_H */
 
