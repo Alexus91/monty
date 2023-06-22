@@ -69,6 +69,10 @@ void process_bytecode(FILE *bytecodeFile, stack_t **stack)
 		{
 			add(stack, line_number);
 		}
+		else if (strcmp(opcode, "sub") == 0)
+		{
+			sub(stack, line_number);
+		}
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
