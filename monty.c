@@ -1,4 +1,5 @@
 #include "monty.h"
+bu_t bu;
 
 /**
  * main - Entry point of the Monty interpreter
@@ -46,7 +47,7 @@ void process_bytecode(FILE *bytecodeFile, stack_t **stack)
 	{
 		if (strcmp(opcode, "push") == 0)
 		{
-			if (!process_push(bytecodeFile, stack, &argument, line_number))
+			if (!process_push(bytecodeFile, stack, &argument, line_number, bu))
 				return;
 		}
 		else if (strcmp(opcode, "pall") == 0)
@@ -102,7 +103,7 @@ void init_stack(stack_t **stack)
  * Return: 1 on success, 0 on failure
  */
 int process_push(FILE *bytecodeFile, stack_t **stack,
-		int *argument, unsigned int line_number)
+		int *argument, unsigned int line_number, bu_t bu)
 {
 	if (fscanf(bytecodeFile, "%d", argument) != 1)
 	{
@@ -111,6 +112,7 @@ int process_push(FILE *bytecodeFile, stack_t **stack,
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	push(stack, *argument);
+	push(stack, *argument, bu);
 	return (1);
+
 }

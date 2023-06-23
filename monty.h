@@ -39,10 +39,19 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *stack;
+typedef struct bu_s
+{
+    char *arg;
+    FILE *file;
+    char *cont;
+    int lifi;
+} bu_t;
+extern bu_t bu;
+
 /* Function prototypes */
 void pop(stack_t **stack, unsigned int line_number);
 void process_bytecode(FILE *bytecodeFile, stack_t **stack);
-void push(stack_t **stack, int value);
+void push(stack_t **stack, int value, bu_t bu);
 void pall(stack_t **stack);
 void free_stack(stack_t **stack);
 int is_integer(const char *str);
@@ -52,8 +61,10 @@ void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 int process_push(FILE *bytecodeFile, stack_t **stack,
-		int *argument, unsigned int line_number);
+		int *argument, unsigned int line_number, bu_t bu);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+void divv(stack_t **stack, unsigned int line_number);
+
 #endif /* MONTY_H */
