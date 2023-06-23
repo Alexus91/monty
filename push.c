@@ -6,15 +6,13 @@
  *
  * Return: void
  */
-void push(stack_t **stack, int value, bu_t bu)
+void push(stack_t **stack, int value)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		fclose(bu.file);
-		free(bu.cont);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
