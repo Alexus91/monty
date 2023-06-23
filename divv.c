@@ -24,5 +24,5 @@ void divv(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n = b / a;
-	pop(stack, line_numb
+	pop(stack, line_number);
 }
