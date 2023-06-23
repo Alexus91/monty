@@ -9,6 +9,7 @@
 void push(stack_t **stack, int value)
 {
 	stack_t *new_node = NULL;
+
 	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
@@ -28,7 +29,7 @@ void push(stack_t **stack, int value)
 	}
 	else
 	{
-		new_node->next = NULL; 
+		new_node->next = NULL;
 	}
 	*stack = new_node;
 }
