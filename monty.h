@@ -76,5 +76,5 @@ void sub(stack_t **stack, unsigned int line_number);
 void divv(stack_t **stack, unsigned int line_number);
 int execute_opcode(const char *opcode, FILE *bytecodeFile, stack_t **stack
 		, int *argument, unsigned int line_number);
-
+void mul(stack_t **stack, unsigned int line_number);
 #endif /* MONTY_H */
